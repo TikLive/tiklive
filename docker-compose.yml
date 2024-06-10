@@ -1,0 +1,51 @@
+version: '3'
+
+services:
+
+  backend:
+    build:
+      dockerfile: backend/Dockerfile
+    ports:
+      - "3060:3060"
+    volumes:
+      - ./backend:/app
+    conrtainer_name: 'backend'
+    env_file:
+      - ./backend/.env
+    networks:
+      - tiklive
+
+  game:
+    build:
+      dockerfile: game/Dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./game:/app
+    conrtainer_name: 'game'
+    env_file:
+      - ./game/.env
+    networks:
+      - tiklive
+      
+  front:
+      build:
+        dockerfile: front/Dockerfile
+      ports:
+        - "5173:5173"
+      volumes:
+        - ./front:/app
+      conrtainer_name: 'front'
+      depends_on:
+        - backend
+        - game
+      env_file:
+        - ./front/.env
+      networks:
+        - tiklive
+networks:
+  tiklive:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 20.19.35.211/16
