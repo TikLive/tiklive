@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 3060
 
 # Comando para iniciar la aplicación
-CMD ["node", "index.js"]
+CMD ["npm", "start"]

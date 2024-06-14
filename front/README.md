@@ -17,6 +17,7 @@ Bienvenido al frontend de TikLive, una aplicación diseñada para gestionar jueg
   - [Contribuciones y Agradecimientos](#contribuciones-y-agradecimientos)
   - [Licencia](#licencia)
   - [Contacto](#contacto)
+  - [José Antonio Márquez Flores](#josé-antonio-márquez-flores)
 
 ## Introducción
 
@@ -25,6 +26,7 @@ Bienvenido al frontend de TikLive, una aplicación diseñada para gestionar jueg
 **Justificación**: Con el aumento de la popularidad de las transmisiones en vivo, es crucial tener una interfaz de usuario que sea rápida, intuitiva y fácil de usar.
 
 **Objetivos**:
+
 - Proveer una interfaz de usuario interactiva y receptiva.
 - Facilitar la gestión de juegos en vivo para los streamers.
 - Mejorar la experiencia del espectador en las transmisiones en vivo de TikTok.
@@ -40,23 +42,27 @@ Bienvenido al frontend de TikLive, una aplicación diseñada para gestionar jueg
 ## Guía de Instalación
 
 1. **Clonar el Repositorio**:
+
     ```bash
     git clone https://github.com/TikLive/tiklive.git
     cd tiklive-frontend
     ```
 
 2. **Instalar Dependencias**:
+
     ```bash
     npm install
     ```
 
 3. **Configurar Variables de Entorno**:
     Crear un archivo `.env` en la raíz del proyecto y agregar las siguientes variables:
-    ```
+
+    ```bash
     VITE_API_URL=tu-url-de-la-api
     ```
 
 4. **Iniciar el Servidor de Desarrollo**:
+
     ```bash
     npm run dev
     ```
@@ -93,6 +99,7 @@ El frontend de TikLive está diseñado para ser rápido, interactivo y fácil de
 Agradecemos las contribuciones de la comunidad. No dudes en enviar issues o pull requests.
 
 Agradecimientos especiales a:
+
 - La comunidad de React y Vite por sus excelentes herramientas y soporte.
 - Los diseñadores y desarrolladores que ayudaron a crear esta interfaz.
 
@@ -104,7 +111,7 @@ Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo [LICENS
 
 Para cualquier consulta o sugerencia, por favor contacta a:
 
-**José Antonio Márquez Flores**
+## José Antonio Márquez Flores
 
 - Email: [joseantonio.marquez@a.vedrunasj.es](mailto:joseantonio.marquez@a.vedrunasj.es)
 - GitHub: [Jousemarquez](https://github.com/jousemarquez)
