@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Renderizar GIF no Canvas</title>
+  <style>
+    canvas {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas" width="400" height="400"></canvas>
+
+  <script>
+      const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+
+const gifPath = window.location.origin + '/img/background.gif';
+const image = new Image();
+image.src = gifPath;
+
+let frames = []; // Array to store the frames
+let currentFrame = 0;
+let isPlaying = true;
+
+image.onload = function() {
+  const frameWidth = image.width;
+  const frameHeight = image.height;
+
+  // Divide the GIF into frames
+  for (let i = 0; i < image.width; i += frameWidth) {
+    const frame = document.createElement('canvas');
+    const frameContext = frame.getContext('2d');
+    frame.width = frameWidth;
+    frame.height = frameHeight;
+    frameContext.drawImage(image, i, 0, frameWidth, frameHeight, 0, 0, frameWidth, frameHeight);
+    frames.push(frame);
+  }
+
+  renderFrame();
+};
+
+function renderFrame() {
+  if (!isPlaying) return;
+
+  // Clear the canvas before rendering the next frame
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  // Renderize the current frame
+  ctx.drawImage(frames[currentFrame], 0, 0);
+
+  // Update the current frame
+  currentFrame = (currentFrame + 1) % frames.length;
+
+  // Schedule the rendering of the next frame
+  requestAnimationFrame(renderFrame);
+}
+
+// Start or pause the animation when the canvas is clicked
+canvas.addEventListener('click', function() {
+  isPlaying = !isPlaying;
+  if (isPlaying) {
+    // Restart the animation if it is being resumed
+    requestAnimationFrame(renderFrame);
+  }
+});
+  </script>
+</body>
+</html>
