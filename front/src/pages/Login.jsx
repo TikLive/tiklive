@@ -22,24 +22,70 @@ const Login = () => {
         Login
       </Typography>
       <form noValidate autoComplete="off">
-        <TextField
+        <TextField 
           label="Email"
           fullWidth
           margin="normal"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          color="secondary"
+          sx={{
+            '& .MuiOutlinedInput-root': {
+              '& fieldset': {
+                borderColor: 'secondary.main',
+              },
+              '&:hover fieldset': {
+                borderColor: 'secondary.main',
+              },
+              '&.Mui-focused fieldset': {
+                borderColor: 'secondary.main',
+              },
+              '& input': {
+                color: 'white',
+              },
+              '& .MuiInputLabel-root': {
+                color: 'white',
+              },
+              '& .MuiInputLabel-root.Mui-focused': {
+                color: 'secondary.main',
+              },
+            },
+          }}
         />
-        <TextField
+        <TextField 
           label="Password"
           type="password"
           fullWidth
           margin="normal"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          color="secondary"
+          sx={{
+            '& .MuiOutlinedInput-root': {
+              '& fieldset': {
+                borderColor: 'secondary.main',
+              },
+              '&:hover fieldset': {
+                borderColor: 'secondary.main',
+              },
+              '&.Mui-focused fieldset': {
+                borderColor: 'secondary.main',
+              },
+              '& input': {
+                color: 'white',
+              },
+              '& .MuiInputLabel-root': {
+                color: 'white',
+              },
+              '& .MuiInputLabel-root.Mui-focused': {
+                color: 'secondary.main',
+              },
+            },
+          }}
         />
         <Button
           variant="contained"
-          color="primary"
+          color="secondary"
           onClick={handleLogin}
         >
           Login

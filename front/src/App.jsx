@@ -4,6 +4,9 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import PrivateRoute from './components/PrivateRoute';
 import { AuthProvider } from './context/AuthContext';
+import ConnectForm from './components/ConnectForm';
+import GameComponent from './components/GameComponent';
+
 import './assets/css/style.css';
 
 const App = () => (
@@ -11,6 +14,8 @@ const App = () => (
     <Router>
       <Routes>
         <Route path="/" element={<PrivateRoute component={Home} />} />
+        <Route path="/connect" element={<ConnectForm />} />
+        <Route path="/game" element={<GameComponent />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Routes>

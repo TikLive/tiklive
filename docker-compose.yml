@@ -9,7 +9,7 @@ services:
       - "3060:3060"
     volumes:
       - ./backend:/app
-    conrtainer_name: 'backend'
+    container_name: 'backend'
     env_file:
       - ./backend/.env
     networks:
@@ -22,7 +22,7 @@ services:
       - "8080:8080"
     volumes:
       - ./game:/app
-    conrtainer_name: 'game'
+    container_name: 'game'
     env_file:
       - ./game/.env
     networks:
@@ -35,7 +35,7 @@ services:
         - "5173:5173"
       volumes:
         - ./front:/app
-      conrtainer_name: 'front'
+      container_name: 'front'
       depends_on:
         - backend
         - game
